@@ -33,29 +33,29 @@ $(document).ready(function() {
         /****************
         FUNCION QUE SOLICITA E IMPRIME LA DATA
         ****************/
-        $.getJSON('/houseGenerator', houseData, function(dataRecibida) {
+        $.getJSON('/houseGenerator', houseData, function(receivedData) {
             console.log('recibí:');
-            console.log(dataRecibida);
+            console.log(receivedData);
 
-            $('#houseStats').append('<span class="houseStat houseDefense"> Defense: ' + dataRecibida.defense + '</span><span class="">Puntos sobrantes:' + dataRecibida.remainingDefense + '</span>');
-            $('#houseStats').append('<span class="houseStat houseDefense"> Influence: ' + dataRecibida.influence + '</span><span class="">Puntos sobrantes:' + dataRecibida.remainingInfluence + '</span>');
-            $('#houseStats').append('<span class="houseStat houseDefense"> Lands: ' + dataRecibida.lands + '</span>');
-            $('#houseStats').append('<span class="houseStat houseDefense"> Law: ' + dataRecibida.law + '</span>');
-            $('#houseStats').append('<span class="houseStat houseDefense"> Population: ' + dataRecibida.population + '</span>');
-            $('#houseStats').append('<span class="houseStat houseDefense"> Power: ' + dataRecibida.power + '</span>');
-            $('#houseStats').append('<span class="houseStat houseDefense"> Wealth: ' + dataRecibida.wealth + '</span>');
+            $('#houseStats').append('<span class="houseStat houseDefense"> Defense: ' + receivedData.defense + '</span><span class="">Remaining Points:' + receivedData.remainingDefense + '</span>');
+            $('#houseStats').append('<span class="houseStat houseDefense"> Influence: ' + receivedData.influence + '</span><span class="">Remaining Points:' + receivedData.remainingInfluence + '</span>');
+            $('#houseStats').append('<span class="houseStat houseDefense"> Lands: ' + receivedData.lands + '</span>');
+            $('#houseStats').append('<span class="houseStat houseDefense"> Law: ' + receivedData.law + '</span>');
+            $('#houseStats').append('<span class="houseStat houseDefense"> Population: ' + receivedData.population + '</span>');
+            $('#houseStats').append('<span class="houseStat houseDefense"> Power: ' + receivedData.power + '</span>');
+            $('#houseStats').append('<span class="houseStat houseDefense"> Wealth: ' + receivedData.wealth + '</span>');
 
 
-            for (var i = 0; i < dataRecibida.events.length; i++) {
-                $('#houseEvents').append('<span class="houseStat houseEvent"> Evento: ' + dataRecibida.events[i] + '</span>');
+            for (var i = 0; i < receivedData.events.length; i++) {
+                $('#houseEvents').append('<span class="houseStat houseEvent"> Evento: ' + receivedData.events[i] + '</span>');
             }
 
-            for (var j = 0; j < dataRecibida.defenseHoldings.length; j++) {
-                $('#defenseHoldings').append('<span class="defenseHoldings">' + dataRecibida.defenseHoldings[j] + '</span>');
+            for (var j = 0; j < receivedData.defenseHoldings.length; j++) {
+                $('#defenseHoldings').append('<span class="defenseHoldings">' + receivedData.defenseHoldings[j] + '</span>');
             }
-            $('#influenceHoldings').append('<span>Max Head of the House Status: ' + dataRecibida.maxStatus + '</span>');
-            for (var i = 0; i < dataRecibida.influenceHoldings.length; i++) {
-                $('#influenceHoldings').append('<span class="influenceHoldings">' + dataRecibida.influenceHoldings[i] + '</span>');
+            $('#influenceHoldings').append('<span>Max Head of the House Status: ' + receivedData.maxStatus + '</span>');
+            for (var i = 0; i < receivedData.influenceHoldings.length; i++) {
+                $('#influenceHoldings').append('<span class="influenceHoldings">' + receivedData.influenceHoldings[i] + '</span>');
             }
 
 
