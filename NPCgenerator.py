@@ -147,7 +147,7 @@ family = {
         "is unfaithful and he/she doesn't know it"
     ),
     "lover": (
-        "has a homosexual partner",
+        "has a partner of the same gender",
         "has been his/her lover for years",
         "has multiple lovers",
         "is of high status and if possible gives him/her money",
@@ -373,6 +373,8 @@ class generateNPC(object):
             if 'eunuch' in strToMod:
                 string = strToMod.replace('eunuch', 'is now barren')
             elif 'him/her' in strToMod:
+                string = strToMod.replace('his/her', 'her')
+            elif 'his/her' in strToMod:
                 string = strToMod.replace('him/her', 'her')
             elif 'he/she' in strToMod:
                 string = strToMod.replace('he/she', 'she')
@@ -382,6 +384,8 @@ class generateNPC(object):
         elif gender == 'male':
             if 'him/her' in strToMod:
                 string = strToMod.replace('him/her', 'him')
+            elif 'his/her' in strToMod:
+                string = strToMod.replace('his/her', 'his')
             elif 'he/she' in strToMod:
                 string = strToMod.replace('he/she', 'he')
             else:

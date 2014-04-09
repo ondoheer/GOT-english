@@ -20,6 +20,7 @@ $(document).ready(function() {
         $('.descendantsContainer').empty();
         $('.siblingsContainer').empty();
         $('.relativesContainer').empty();
+        $('.loverContainer').empty();
 
         npcCharacter.age = $('#age').val();
         if ($('#male').is(':checked')) {
