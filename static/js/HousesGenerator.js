@@ -37,25 +37,25 @@ $(document).ready(function() {
             console.log('recibí:');
             console.log(receivedData);
 
-            $('#houseStats').append('<span class="houseStat houseDefense"> Defense: ' + receivedData.defense + '</span><span class="">Remaining Points:' + receivedData.remainingDefense + '</span>');
-            $('#houseStats').append('<span class="houseStat houseDefense"> Influence: ' + receivedData.influence + '</span><span class="">Remaining Points:' + receivedData.remainingInfluence + '</span>');
-            $('#houseStats').append('<span class="houseStat houseDefense"> Lands: ' + receivedData.lands + '</span>');
-            $('#houseStats').append('<span class="houseStat houseDefense"> Law: ' + receivedData.law + '</span>');
-            $('#houseStats').append('<span class="houseStat houseDefense"> Population: ' + receivedData.population + '</span>');
-            $('#houseStats').append('<span class="houseStat houseDefense"> Power: ' + receivedData.power + '</span>');
-            $('#houseStats').append('<span class="houseStat houseDefense"> Wealth: ' + receivedData.wealth + '</span>');
+            $('#houseStats').append('<span class="houseStat houseDefense"> Defense: ' + receivedData.defense + '</span><span class="">Remaining Points:' + receivedData.remainingDefense + '</span><br>');
+            $('#houseStats').append('<span class="houseStat houseDefense"> Influence: ' + receivedData.influence + '</span><span class="">Remaining Points:' + receivedData.remainingInfluence + '</span><br>');
+            $('#houseStats').append('<span class="houseStat houseDefense"> Lands: ' + receivedData.lands + '</span><br>');
+            $('#houseStats').append('<span class="houseStat houseDefense"> Law: ' + receivedData.law + '</span><br>');
+            $('#houseStats').append('<span class="houseStat houseDefense"> Population: ' + receivedData.population + '</span><br>');
+            $('#houseStats').append('<span class="houseStat houseDefense"> Power: ' + receivedData.power + '</span><br>');
+            $('#houseStats').append('<span class="houseStat houseDefense"> Wealth: ' + receivedData.wealth + '</span><br>');
 
 
             for (var i = 0; i < receivedData.events.length; i++) {
-                $('#houseEvents').append('<span class="houseStat houseEvent"> Evento: ' + receivedData.events[i] + '</span>');
+                $('#houseEvents').append('<span class="houseStat houseEvent"> Event: ' + receivedData.events[i] + '</span><br>');
             }
 
             for (var j = 0; j < receivedData.defenseHoldings.length; j++) {
-                $('#defenseHoldings').append('<span class="defenseHoldings">' + receivedData.defenseHoldings[j] + '</span>');
+                $('#defenseHoldings').append('<span class="defenseHoldings">' + receivedData.defenseHoldings[j] + '</span><br>');
             }
-            $('#influenceHoldings').append('<span>Max Head of the House Status: ' + receivedData.maxStatus + '</span>');
+            $('#influenceHoldings').append('<span>Max Head of the House Status: ' + receivedData.maxStatus + '</span><br>');
             for (var i = 0; i < receivedData.influenceHoldings.length; i++) {
-                $('#influenceHoldings').append('<span class="influenceHoldings">' + receivedData.influenceHoldings[i] + '</span>');
+                $('#influenceHoldings').append('<span class="influenceHoldings">' + receivedData.influenceHoldings[i] + '</span><br>');
             }
 
 
